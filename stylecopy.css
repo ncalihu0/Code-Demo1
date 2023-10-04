@@ -1,0 +1,264 @@
+/* Added a margin and padding to remove any padding and margin our our whole page */
+/* Removed universal selector and added those elements either to the html or body */
+/* vw and vh deal with the viewport screen we see. It doesn't rely on parents or inheritance */
+/* mainly for margins, padding, space, width and height */
+/* rem and em. rem is based on the root element like html and takes its calculations from there */
+/* em is based on a parent elemet. */
+/* mainly used for font sizing */
+
+html {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Changed the font-size to rem, added align items, flex direction and width and height*/
+  body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  
+  }
+  
+  
+  nav {
+    top: 0;
+    width: 100vw;
+    padding: 15px 0;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+  }
+  
+  nav a {
+    text-decoration: none;
+    margin: 20px;
+    color: black;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .menu {
+    height: 20px;
+    width: 20px;
+  }
+  
+  /* made my class section-1 into a flexbox. */
+  /* absolute is based on positioning it to the nearest parent element, removed from the flow of the document and can overlap  */
+  .section-1 {
+    /* position: absolute;
+    top: 450px;
+    margin: 0 auto;
+    width: 40%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    
+  }
+
+  /* Deleted class .logoimg */
+ /* Took off margin, display, justify-content, and align-self */
+ .logoImg__google {
+   
+  width: 300px;
+  height: 100px;
+  padding-bottom: 1%;
+}
+
+/* added a form element in order to be able to display my input and buttons below one another and configure the input size*/
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+  }
+  
+  input {
+    width: 100%;
+    /* padding: 10px; */
+    border: 1px solid #ccc;
+    border-radius: 60px;
+    font: 16px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  
+  button {
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 5px;
+    /* position: absolute; */
+  
+  }
+  
+  button:hover,
+  button:active {
+    background: #d9d4d4;
+  }
+
+  /* added a class buttons where both my buttons are stored. With flex I was able to make my buttons be within thw same line */
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  /* removed the first and second class buttons */
+  /* .first-button {
+    padding: 5px 20px;
+    border-radius: 4px;
+    margin-left: 20%;
+  }
+  
+  .second-button {
+    padding: 5px 20px;
+    border-radius: 4px;
+    margin-left: 50%;
+  } */
+
+  .button {
+    padding: 5px 20px;
+    border-radius: 4px;
+    width: 35%;
+  } 
+  
+  /* changed from absolute to fixed */
+  footer {
+    bottom: 0;
+    width: 100vw;
+    padding: 10px;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    background-color: #f7f3f3;
+  }
+  
+  footer a {
+    color: black;
+    text-decoration: none;
+    margin: 30px;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+    /* removed my media query */
+  /* @media (max-width: 1300px) {
+    button {
+      border-radius: 4px;
+      font-size: 16px;
+      padding: 5px;
+      position: relative;
+      left: 3rem;
+  
+    }
+  
+    .first-button {
+      padding: 5px 20px;
+      border-radius: 4px;
+      margin-left: 0;
+      margin-bottom: 0.5rem;
+    }
+  
+    .second-button {
+      padding: 5px 20px;
+      border-radius: 4px;
+      margin-left: 0;
+    }
+  } */
+  
+  /* added three new media queries. target smaller devices like phones. Then larger devices like tablets */
+  @media screen and (max-width: 399px){
+    nav {
+      font-size: small;
+      align-items: flex-end;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+    }
+    .button {
+      width: auto;
+      margin-bottom: 10px;
+      padding: 0;
+    }
+
+     /* margin auto is there to ensure items are not too spaced out from one nother */
+
+   footer a {
+    margin:auto;
+    padding: 15px;
+    font-size: small;
+   }
+   /* links are stacked on top of one another */
+   footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+   }
+
+   .footer {
+    padding: 5px;
+   }
+  }
+
+  @media screen and (min-width: 400px) and (max-width: 800px) {
+    nav {
+      align-items: flex-end;
+    }
+    form {
+      width: 78vw;
+    }
+
+
+    .button {
+     width: 30vw;
+     /* margin-left: 20%; */
+   }
+   
+
+    /* margin auto is there to ensure items are not too spaced out from one nother */
+   footer a {
+    margin:auto;
+    padding: 15px;
+   }
+   /* links are stacked on top of one another */
+   footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+   }
+
+   .footer {
+    padding: 5px;
+   }
+  }
+
+  @media screen and (min-width: 801px) and (max-width: 1200px) {
+    .button {
+      width: 20vw;
+    }
+  
+    /* tooked from the first query */
+    footer a {
+      margin:auto;
+      padding: 15px;
+     }
+     footer {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+     }
+  
+     .footer {
+      padding: 5px;
+     }
+  }
